@@ -2,12 +2,12 @@
 Steven Eiselen | Version 05/29/22
 
 ### Contents:
-[link](#purpose-and-introduction)
-[link](#common-ground)
-[link](#serious-games-and-simulations)
-[link](#interactive-digital-storytelling)
-[link](#architectural-CAD-and-modelling)
-[link](#immersive-games-and-simulations)
+[Purpose and Introduction](#purpose-and-introduction)
+[## Common Ground](#common-ground)
+[Serious Games and Simulations](#serious-games-and-simulations)
+[Interactive Digital Storytelling](#interactive-digital-storytelling)
+[Architectural CAD and Modelling](#architectural-CAD-and-modelling)
+[Immersive Games and Simulations](#immersive-games-and-simulations)
 
 ---
 
@@ -49,7 +49,3 @@ In effect, then: one could say that my work also seeks to determine how and wher
 ## Immersive Games and Simulations
 
 **Immersive Games and Simulations** encompass the generation of simulation environments for exploration, leisure, and entertainment purposes. IOW: 'Video Games'; although I must again assert that this term is inadequate towards describing the kinds of worlds and experiences thereof which inspire this research work. Digression aside, and more specifically: the revised thesis topic WRT this idem would be most suitable towards empowering tools and/or techniques in the subfield of Level Design (i.e. / e.g. **'procedural workflows'** also discussed in **'Procedural Generation Interests'**).
-
-
-
-
