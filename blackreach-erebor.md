@@ -4,14 +4,11 @@ Steven Eiselen | Version 05/29/22
 
 ---
 
-## Introduction
-
-### Abstract/Overview
+## Introduction / Overview
 
 ***Note:** This is currently an inactive research project, as well as a candidate for my since suspended Master's Thesis Project.*
 
 **Blackreach-Erebor** (hereafter BE) encompasses the Procedural Content Generation (hereafter PCG) of interior spaces within highly detailed, realistic, and immersive 3D simulations *(e.g. 'video games' - though I prefer not using that word as these kinds of simulations can be as disjoint from Skyrim as Skyrim is from Pacman)*. Given geometric definitions for any adjacent exterior space(s) in addition to all connections thereof, a contextual definition of what kind of space to generate, and a content database from which to generate the space with: correct methods would produce outputs that both satisfy the input context, 'fit within' (i.e. WRT) the exterior space(s), and 'correctly' connect with exterior access points WRT their data and geometric representations.
-
 
 **Put more simply:** The goal of BE would be development of methods and tools that would allow the developers of some 3D 'video game' simulation to procedurally generate interiors for everything from houses, to skyscrapers, to dungeons in such a way that the interior spaces ‘fit within’ the exterior structures and terrain, as well as connect to them via entrances and exits. Even if, for example: the interior of a 10 story office tower is in a different ‘scene’ than the exterior within the overworld: the mesh geometry would match; such that if the two parts were brought into one scene, and aligned: they would match up seamlessly. Even down to the windows matching up.
 
