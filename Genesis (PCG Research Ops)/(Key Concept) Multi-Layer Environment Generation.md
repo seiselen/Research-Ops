@@ -1,4 +1,4 @@
-# Key Concept: 'Multi-Layered Environment Generation'
+# Key Concept: MLEG (Multi-Layer Environment Generation)
 
 ## Blurb/Overview
 
