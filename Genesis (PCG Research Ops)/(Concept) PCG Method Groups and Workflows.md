@@ -1,4 +1,4 @@
-# (Key Concept) PCG Method Groups and Workflows
+# (Concept) PCG Method Groups and Workflows
 
 ## Overview and Introduction
 
