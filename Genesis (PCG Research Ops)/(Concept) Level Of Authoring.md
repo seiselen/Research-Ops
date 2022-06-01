@@ -18,18 +18,6 @@ The most ML-suited method. The user does not have an idea for what exactly shoul
 
 ## FITB-Based (Fill-In-The-Blanks)
 
-Similar to the Similarity-Based method, but generates an environment based largely on whatever surrounding environments have already been generated. Demonstrated with TerrainGAN. Basically: “We have manually designed the major city, towns, and some other parts of some region, but most of the remaining area remains blank (undefined). Fill the gaps in with a mountain over here, valleys over here, a lake somewhere in here, and otherwise as corresponding with the surrounding area.
+Similar to the Similarity-Based method, but generates an environment based largely on whatever surrounding environments have already been generated. Demonstrated with TerrainGAN. Basically: the AI can 'fill in large patches' between manually designed areas which are consistent between such areas. This method was mentioned in another document with a prefix as: **Informed/Intelligent FITB**, likely to imply that AI/ML techniques are utilized thereto.
 
-AKA Informed/Intelligent FITB
-
-Mention TerrainGAN parallel
-Basically: the AI can 'fill in large patches' between manually designed areas which are consistent between such areas. For example:
-        Ø Input:
-                ○ Chunks of manually-designed environment composing downtown Raccoon City, the Spencer Mansion, and several other small defined areas partitioned by gaps which need to be filled in;
-                ○ General definitions for what should go between (e.g. this sector should be suburbs, that sector is a part of the Arklay Mountains between Spencer Mansion and Training Facility);
-                ○ Resource/Content definitions for architecture styles / props / other reference multimedia
-Output: 'Filled-In' gaps consistent with the adjacent defined areas and input reference/resource material. For example, the remainder of the Arklay Mountains, the exurbs/suburbs of Racoon City, the train tracks and infrastructure leaving the city, etc. such that each seamlessly converge with the defined sub-sectors of the greater environment.
-
-**Side Note:** This was a feature I found most interesting/promising with TerrainGAN, and implementing it alongside the 'future work' of additional terrain types (including urban areas) was a major motive of which Proto-Moonshot in Carlos ML course was initially planning to explore (before being scaled down)
-
-
+**FITB Narrative Example:** *We have manually designed the major city, towns, and some other parts of some region, but most of the remaining area remains blank (undefined). Fill the gaps in with a mountain over here, valleys over here, a lake somewhere in here, and otherwise as corresponding with the surrounding area.*
