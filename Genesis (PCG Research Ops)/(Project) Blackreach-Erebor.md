@@ -1,7 +1,6 @@
 # Project : Blackreach-Erebor
 ### Procedural Content Generation of 3D Environments for Interior Spaces
-Steven Eiselen | Version 05/29/22
-
+Steven Eiselen | Version 06/01/22
 ---
 
 ## Introduction / Overview
@@ -20,13 +19,11 @@ Steven Eiselen | Version 05/29/22
 
 **Another greater idea/feature of this work** encompasses the likewise (if not corollary) ability to generate these areas both **'offline'** *(i.e. before the simulation is initialized, executed, and 'run')* as well as **'online'** *(i.e. 'on-the-go' or 'at-runtime' as the simulation is being traversed by both human players and NPC characters)*. This yields a VERY interesting means (and reseach question itself) for generating ***some*** of the world as **"on-demand and likely unique 'filler content'"** that is not directly created nor designed by the developer: created only when requested (i.e. via a player of some post-apocalypse RPG who *really* wants to explore every room in all 60 floors of some downtown building); while the ***remainder*** of the world was designed and created ahead of time, thus with the exception of minor things like random loot/object placement and other random events: will otherwise be non-unique shared content.
 
+
 ## Origin Of Name
 
 **'Blackreach'** is a Dwemer (Dwarven) City located beneath the Province of Skyrim within the 'Elder Scrolls' universe. **'Erebor'** is a Dwarven City located beneath the Lonely Mountain from the 'Lord of The Rings' universe. Each had its builders and original inhabitants displaced such that they were both effectively ruins. Their size, scale, and similar outcomes compose perhaps the greatest depictions of the classic 'dungeon' environment known well to any video game and fantasy fiction fan, and this quality is why each compose the names of this project.
 
-## (11/25/19) Notes On Prospective Novelty Of BE
-
-**The prospective novelty of my emergent approach/methods involves the expansion and composition of known PCG methods** *(naturally, as isn't this much of the frontier of research in Computer Science?)* I would be adapting existing methods 'outwards'; for example: using Wonka's shape grammar/tree methods for generating the exteriors of buildings *(i.e. 'Interactive Visual Editing of Grammars for Procedural Architecture')* towards generating the interiors thereof. I would be adapting existing methods 'inwards' via continuing the 'generative tree' definition towards deeper leaves/layers ergo 'continuing the expressveness of the language'. These improvements would encompass things ranging from procedural damage modifiers (as perhaps deformation maps); to 'micro-element props' such as static lighting fixtures against a wall (and code supporting the light); and/or dynamic props such placing fire hydrants in their geometry-defined boxes within a wall, and/or loose, destructible pipe and wire models connecting geometry-defined I/O wall prefabs *(think DooM 3 labs and/or Skyrim's Dwemer ruins)*.
 
 ## Common Methods Identified Via Precedent Research
 
@@ -41,4 +38,29 @@ Steven Eiselen | Version 05/29/22
 * **Circle Filling** (e.g. Poisson Disk) and **Square Filling** (e.g. [Blue] Noise) Algorithms (as well as aforementioned methods) to place static and dynamic props.
 
 
+## Key Quality of Wonka 'Hierarchical Composition Tree'
 
+A key quality of Wonka's 'Hierarchical Composition Tree' method in the *'Interactive Visual Editing of Grammars for Procedural Architecture'* paper WRT both BE and PCG in general is that it **supports a multi-layered built-in LOD with the possibility of an expanded variety of uses**; of which include:
+
+* **LOD for rendering purposes** i.e. rendering lower quality versions of models from a distance; and this could be a convenient if not novel way of efficiently culling models from certain layers as well as combining lower-rez models composing multiple layers into a single model (i.e. single model at LOD-3 is low-res version of its LOD-3, 4, and 5 correspondence);
+* **LOD for data-size organization and composition of levels** vis-a-vis approaches described by the paper; such that...
+  * At-Present: via the SWEET ability to author geometry within certain layers versus worry over the highest rez geometry of layers below *(i.e. represent the art-deco glass and steel facade of a skyscraper as toon-shared quad primitives that can be stretched and modified much more easily when sculpting the building, while auto-generating the subsequent layers nicely)*.
+  * In-The-Future: determining the maximal potential towards using this compositional tree to represent an entire level (perhaps as a graph). Could this massively improve rendering, pathfinding, PCG, etc. abilities more than a discrete per-instance definition or other existing 'chunking' methods? Basically: Express an entire dungeon as a 'sea of nodes' similar to how Wonka expresses a skyscraper.
+
+
+## (11/2019) Notes On Initial BE Algorithm / Details Thereof
+
+**(1) Define 'Externally-Defined Bounds'** as set of Convex Hulls encompassing a uniform offset from the corresponding external geometry. For example: the 'Dungeon in the Mountains' case would receive a mesh corresponding to the mountainous geometry offset by, 50 feet (of rock and WLOG) from which its entrance connects to its exterior counterpart; as well as perhaps a mesh/octree representation of any predefined geometry such as caverns and existing dungeons. The 'Basements in the City' case is analogous; such that the boundaries correspond to the streetscape, existing basements of other buildings (and their connections A/A), subway tunnels and utility corridors, etc.
+
+**(2) Commence initial 'Primitive Geometry Carve-out'** of prospective interior space as another set of convex hulls which effectively corresponds to a 'feasibility region' for where the architecture is 'allowed' to be generated; AKA: **define the 'can-build/generate zones'**. This primitive definition could also be kept for future interior spaces, culling spatial partitioning, etc. as to 'not waste the info'. In any event: via this definition - more refined/detailed candidates can now be generated. Another intermediate process that needs to be discussed is defining geometry for the connections to exterior areas and/or separate interior spaces (A/A to where connections exist and are defined, of course).
+
+* **Side Note:** This could be an application of what I saw in the 'Generative Building Architecture' Wonka-Paper in terms of representing the generated space in a model heirarchy as to support both LOD, and more importantly: easier editing of the space WRT some 'level' thereof. For example: speaking for the room layout of a room before worrying about the installation of prefabs for the walls, floors, etc.
+
+**(3) Commence 'Architectural Generation' of interior space**. This is the *'Big Realization of (Shape) Grammars'* step; and encompasses using 'architectural words, sentences, and songs' in a Shape-Grammar method to install all the prefabs corresponding to all of the interior architecture; e.g. walls, floors, ceilings, doors, stairwells, etc. This was AKA 'swap[ping] the primitive geometric definitions with architectural prefabs', which is also analogous to the Wonka 'Generative Bldg Architecture' paper's high-level methods. Another prospectively novel idea is to incorporate damage modifications into the language, as to support stuff like “produce a partially damaged colonnade” within the generator hierarchy; else some otherwise damage sim to the geometry, as would be necessary for an online, physics-oriented,  and persistent destructible geometry.
+
+**(4) Commence Micro-Architecture Generation and Prop Placement**. An extra step that I'm more convinced should be included in my method: either a different generator (or possibly the same hierarchy) could then generate smaller scale architecture and props (Now THIS is an interesting idea). The former would include loose wires, spiderwebs, pipes, static animated props (e.g. boilers, generators, gearworks, etc.), etc. The latter would include everything from trash bins and chairs to welkynd stones and food.
+
+
+## (11/2019) Notes On Prospective Novelty Of BE
+
+**The prospective novelty of my emergent approach/methods involves the expansion and composition of known PCG methods** *(naturally, as isn't this much of the frontier of research in Computer Science?)* I would be adapting existing methods 'outwards'; for example: using Wonka's shape grammar/tree methods for generating the exteriors of buildings *(i.e. 'Interactive Visual Editing of Grammars for Procedural Architecture')* towards generating the interiors thereof. I would be adapting existing methods 'inwards' via continuing the 'generative tree' definition towards deeper leaves/layers ergo 'continuing the expressveness of the language'. These improvements would encompass things ranging from procedural damage modifiers (as perhaps deformation maps); to 'micro-element props' such as static lighting fixtures against a wall (and code supporting the light); and/or dynamic props such placing fire hydrants in their geometry-defined boxes within a wall, and/or loose, destructible pipe and wire models connecting geometry-defined I/O wall prefabs *(think DooM 3 labs and/or Skyrim's Dwemer ruins)*.
