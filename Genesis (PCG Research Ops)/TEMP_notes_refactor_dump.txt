@@ -1,111 +1,11 @@
-TEMP notes refactor dump
+########################################################################
+TTD WRT Wrapping Up Refactors (i.e. stuff-not-done-yet-list):
 
+Has GH MD:
+  > Level Of Authoring
 
-Research Mission Statement
+Is Ext HTML
+  > Blackreach-Erebor (fully ext a/o 05/31/22)
+  > Naughtiest Problem and Trifold Principle (fully ext a/o 05/31/22)
 
-Empower creators and explorers of simulated worlds from the 'invisible walls and empty spaces' which hide the limitations that a finite team of humans face in terms of time and effort towards crafting massive, highly detailed environments and the entities which live within them. Empower simulated worlds from the 'state of non-dynamic stasis' which limits their ability and that of all characters, events, and environments therein to evolve beyond some discrete completion of pre-scripted events. Determine the computational limits of 'min world input - max world output'.
-
-
-
-# (Key Idea) 'Principle of Physical Stability and Contextual Consistency'
-
-## Blurb
-
-A key idea that I think is not novel but also non-existent in terms of proper definition is what I call the 'Principle of Physical Stability and Contextual Consistency'. There is an intended sense of cohesion between the two ideas, as the complement of each encompasses the means towards effecting convergence towards optimally realistic procedurally generated simulation environments WRT both human explorers and most importantly: the native inhabitants therein. Basically, this principle asserts that optimal procedurally generated environments must keep and enforce the 'illusion of reality' within virtual reality environments as much as possible.
-
-## Physical Stability
-
-**Physical Stability** demands that the generated world is stable with respect to the laws which govern it; similar to how the laws of gravity, thermodynamics, etc. must always hold in order for our universe to be stable to exist within. WRT simulation worlds, this could encompass things such as:
-Mesh colliders correct with geometry and collision mechanics behave correctly
-No holes exist for terrain meshes nor holes and/or z-fighting for any surface
-No static objects (i.e. trees) are 'floating in the air' nor ever become dynamic
-No physically dynamic objects 'freeze in place' as static objects
-NPCs able to navigate throughout world with no unrealistic pathing effects
-NPCs travel correctly and seamlessly between sub-scenes/environments.
-
-## Contextual Consistency
-
-**Contextual Consistency** demands that all content in all spaces within the generated world is consistent with all aspects of their respective context. For example: an accurate simulation of Paris, France in the 1960's should not have NYPD police cars from the 2010's patrolling the streets, nor a simulation of Middle Earth in Lord Of The Rings have Boeing 747 Jumbo Jets flying over the skies of Gondor. Further, this is a spatio-temporal assertion iff the simulation plays out a progression of events WRT some lore/storyline. Using the same Lord of the Rings simulation: assume the current timeframe is before Gandalf discovers that his fellow wizard Saruman has secretly turned against the fellowship and has aligned with the dark lord Sauron. One should be able to walk up to Gandalf's character, tell him that they think Saruman has become evil, and be told by Gandalf that while Saruman has been quiet-of-late, there's no evidence to prove this claim. WRT simulation worlds, this could encompass things such as:
-Terrain, props, architecture, buildings, NPCs consistent with surrounding area.
-No patch of snow covered tundra in a tropical forest or vice versa.
-No Borg in a DooM simulation, nor Cyberdemons in a Star Trek simulation
-
-To physically stable: this means things like no sudden major gaps of defined world space (i.e. forest turns into giant flat patch of land or worse - empty space as to see through the world), and no characters falling through floors or buildings floating in the sky (unintentionally, that is). To contextually consistent: this means things like no police cars, cell phones, modern clothing, nor 757 jets flying over what should be the classic fantasy setting; as well as space-time consistency which requires some more examples. For starters: if the world “starts” right before it's revealed that the wizard Saruman has turned against the fellowship and aligned with the Dark Lord Sauron, the player should be able to ask the Wizard Gandalf about Saruman and be told something.
-
-
-
-
-
-
-Concept: LOA (Level Of Authoring)
-
-
-
-## Overview: 
-
-LOA is my attempt to define and speak about the 'guidance' by which PCG generates environments, especially pertaining to human involvement (i.e. 'authoring'). A technique could use one or more of these. The current schema is:
-
-
-## Sketch-Based
-
-Human provides a rough sketch of what some environment should look like. Roughly speaking: it includes drawing shapes to represent the basic geometry of some feature, and glyphs to describe what the feature represents. For example, splines and spline polygons to indicate terrain alongside the desired feature (e.g. [R] = river, [M] = mountain, [L] = lake); boxes, circles, or some polygon to represent settlements alongside the desired type (e.g. [V] = village, [T] = town, [C] = city); as well as paths to indicate desired connections between settlements. This would be the method most suitable for users who have a clear idea on what they want an environment to look like, both spatially and contextually.
-
-## Description-Based
-
-Basically a 'List' of what the user wants in the environment, with the remaining details left to the generator. For Example: “Generate a mountainous environment with a river going through it, three towns located along the river spaced equidistant from one another, a few mines into the mountain, and a castle. Connect the towns, mines, and castle all with each other and preferably on mostly flat paths that align with the river. Then place random inns, farms, and small villages along the roads but not too close to each other and the other settlements. Lastly, place random bandit camps throughout the environment but nowhere within ½ mile of a settlement”. This method would be suitable for users who have an idea for what should be within an environment, but don't have any specification for how the environment should be arranged.
-
-## Similarity-Based
-
-The most ML-suited method. The user does not have an idea for what exactly should be in an environment, but can provide the system with some examples. For example: “Create this particular region to have a giant city and surrounding area in a manner: similar in appearance to Elder Scrolls' Imperial City crossed with London UK, in a desert environment similar to Arizona, and set in the United States in the 1980's”
-
-## FITB-Based (Fill-In-The-Blanks)
-
-Similar to the Similarity-Based method, but generates an environment based largely on whatever surrounding environments have already been generated. Demonstrated with TerrainGAN. Basically: “We have manually designed the major city, towns, and some other parts of some region, but most of the remaining area remains blank (undefined). Fill the gaps in with a mountain over here, valleys over here, a lake somewhere in here, and otherwise as corresponding with the surrounding area.
-
-AKA Informed/Intelligent FITB
-
-Mention TerrainGAN parallel
-Basically: the AI can 'fill in large patches' between manually designed areas which are consistent between such areas. For example:
-        Ø Input:
-                ○ Chunks of manually-designed environment composing downtown Raccoon City, the Spencer Mansion, and several other small defined areas partitioned by gaps which need to be filled in;
-                ○ General definitions for what should go between (e.g. this sector should be suburbs, that sector is a part of the Arklay Mountains between Spencer Mansion and Training Facility);
-                ○ Resource/Content definitions for architecture styles / props / other reference multimedia
-Output: 'Filled-In' gaps consistent with the adjacent defined areas and input reference/resource material. For example, the remainder of the Arklay Mountains, the exurbs/suburbs of Racoon City, the train tracks and infrastructure leaving the city, etc. such that each seamlessly converge with the defined sub-sectors of the greater environment.
-
-**Side Note:** This was a feature I found most interesting/promising with TerrainGAN, and implementing it alongside the 'future work' of additional terrain types (including urban areas) was a major motive of which Proto-Moonshot in Carlos ML course was initially planning to explore (before being scaled down)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Idea: Use of 'Context Bitstrings'
-
-
-Overview: Alex Koltz reminded me about the technique of using bitstring hash codes as a KR encoding for newly generated (i.e. 'On Init') environments as to effect some degree of persistence (i.e. stays the same post-generation ergo does not [fully] regenerate).
-
-
-Idea: The perspective by which he reintroduced the idea was for the proposition of focusing my work on the [Building Interior] | [Building]∧[Context] aspect; as for an interior, once generated, to persist thereafter. An immediate extrapolation is to offer persistence such that the static geometry perists unchanged alongside a contextual definition for the interiors' props and NPCs which is subject to modification (e.g. swapping out NPCs and loot items over time as per E.S. Oblivion).
-
-
-1/5/2020 Update: The main if not only purpose of this would be to compress the 'contextual definition' of the generated content; both in terms of its static definition (i.e. “this is a grocery store”) and dynamic/unique definition (i.e. “it was looted”, “it was overrun with zombies at some point”).
-
-
-Example: For example of a contextual definition, an encoding could represent the directive: “This interior space was generated to be a floor of hospital rooms and associated stuff following a zombie apocalypse” as for the system to 'intelligently' scatter loot and other items throughout the area corresponding to hospital rooms, labs, custodial equipment, etc. while placing zombie NPCs such that most are in the form of zombie nurses, orderlies, doctors, paramedics, patients, and other types that would be expected in a hospital floor.
-
-
-Issues / Challenges / Questions: Mostly involving how such compression and reducibility could be done and to what degree. Clearly the geometry can less easily be encompassed in a bitstring. However, there might be merit in perhaps implementing a [geometry,context] data-pair wherein the geometry half is unavoidably a mesh generated @Init, but the context supports the @Init generation thereof while providing a more feasible encoding for how and what could be placed into the environment. So we fully persist the geometric “walls floors ceilings” definition, but contextually persist what gets placed within. And given the polygon costs of even 'game-ready' props, this arrangement actually saves much of the required model storage needed. Furthermore, we could actually persist prop placement … via only keeping a [Transform,ObjectID] entry in some data structure associated with the environment!
-
-
-Thus - The Concept: We will allow you to explore all 60 floors of an office building or however many you have the time and patience to explore, even though the developers only designed the building's exterior (if even that - but this is a different PCG method!) We will also guarantee that, once generated, the geometry of the 48th floor of this building will stay the same the next time you visit it, as well as some of the objects placed therein. Correspondingly: we need to procedurally generate the geometry for each floor, and the client (you) must store the geometry created and consequently incur the data costs thereof; but you could choose whether of not the prop items placed within are also saved as [Transform,ObjectID] pairs, and we encode the context of what this floor represents in a bitstring versus some larger data representation.
-
+########################################################################
