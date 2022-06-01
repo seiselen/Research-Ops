@@ -19,3 +19,11 @@ Steven Eiselen | Version 05/29/22
 * The vast web of halls and chambers composing an ancient Dwarven city within a mountain: such that there are multiple entrance points along the mountainside which correspond geometrically to their pairs encompassing the city; and no parts of the city overlap onto the surface, other structures which happen to exist above or beneath the surface, and especially onto itself.
 
 **Another greater idea/feature of this work** encompasses the likewise (if not corollary) ability to generate these areas both **'offline'** *(i.e. before the simulation is initialized, executed, and 'run')* as well as **'online'** *(i.e. 'on-the-go' or 'at-runtime' as the simulation is being traversed by both human players and NPC characters)*. This yields a VERY interesting means (and reseach question itself) for generating ***some*** of the world as **"on-demand and likely unique 'filler content'"** that is not directly created nor designed by the developer: created only when requested (i.e. via a player of some post-apocalypse RPG who *really* wants to explore every room in all 60 floors of some downtown building); while the ***remainder*** of the world was designed and created ahead of time, thus with the exception of minor things like random loot/object placement and other random events: will otherwise be non-unique shared content.
+
+## Origin Of Name
+
+**'Blackreach'** is a Dwemer (Dwarven) City located beneath the Province of Skyrim within the 'Elder Scrolls' universe. **'Erebor'** is a Dwarven City located beneath the Lonely Mountain from the 'Lord of The Rings' universe. Each had its builders and original inhabitants displaced such that they were both effectively ruins. Their size, scale, and similar outcomes compose perhaps the greatest depictions of the classic 'dungeon' environment known well to any video game and fantasy fiction fan, and this quality is why each compose the names of this project.
+
+
+
+
