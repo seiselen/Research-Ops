@@ -5,3 +5,53 @@ TTD WRT Wrapping Up Refactors (i.e. stuff-not-done-yet-list):
   > Naughtiest Problem and Trifold Principle
 
 ########################################################################
+
+
+Via 11/25 Whiteboard Notes
+
+An idea into the prospective novelty of my emergent approach/methods involves the expansion and composition of known PCG methods. Expansion in that I would be adapting them ‘outwards’ for the generation of building interiors (via methods in Wonka for exteriors); as well as ‘inwards’ via continuing the ‘generative tree’ definition towards deeper leaves/layers ergo ‘continuing the expressveness of the language’ These expansions would encompass things ranging from procedural damage modifiers (as perhaps deformation maps); to ‘micro-element props’ such as static lighting fixtures against a wall (and code supporting the light); and/or dynamic props such placing fire hydrants in their geometry-defined boxes within a wall, and/or loose, destructible pipe and wire models connecting geometry-defined I/O wall prefabs (think DooM 3 labs and/or Dwemer ruins).
+
+
+Common Methods Identified from the research on precedent done so far include:
+
+Convex Hull Generation[a] for identifying the ‘build zones’, collision areas, etc.
+Spatial Partitioning for defining rooms within the ‘build zones’
+[Shape] Grammars for defining the multi-layer prefabs (as to support variability[b])
+[Prefab] Grammars for installing[c] multi-layer prefabs upon the ‘build zones’
+Circle Filling (e.g. Poisson Disk) and Square Filling (e.g. [Blue] Noise) Algorithms (as well as aforementioned methods) to place static and dynamic props.
+
+Key Quality of Wonka 'Hierarchical Composition Tree’ method in the ‘building generator’ paper WRT PCG in general as well as Blackreach-Erebor: Supports a multi-layered built-in LOD with the possibility of an expanded variety of uses including:
+
+LOD for rendering purposes i.e. rendering lower quality versions of models from a distance; and this could be a convenient if not novel way of efficiently culling models from certain layers as well as combining lower-rez models composing multiple layers into a single model (i.e. single model at LOD-3 is low-res version of its LOD-3, 4, and 5 correspondence)
+LOD for data-size organization and composition of levels vis-a-vis approaches described by the paper. First via the SWEET ability to author geometry within certain layers versus worry over the highest rez geometry of layers below (i.e. represent the art-deco glass and steel facade of a skyscraper as toon-shared quad primitives that can be stretched and modified much more easily when sculpting the building, while auto-generating the subsequent layers nicely).
+BIG IDEA - Remember your ‘Hypercontainer’ idea?[d] This method really gets me thinking about how far we could go with using this compositional tree to represent an entire level (perhaps as a graph). Could this massively improve rendering, pathfinding, PCG, etc. abilities more than a discrete per-instance definition or other existing ‘chunking’ methods?
+Via Paper Notes Sometime Around 11/10 (with refinement on 11/24)
+
+Main Steps:
+
+Define ‘Externally-Defined Bounds’ as set of Convex Hulls encompassing a uniform offset from the corresponding external geometry. For example: the ‘Dungeon in the Mountains’ case would receive a mesh corresponding to the mountainous geometry offset by, 50 feet (of rock and WLOG) from which its entrance connects to its exterior counterpart; as well as perhaps a mesh/octree representation of any predefined geometry such as caverns and existing dungeons. The ‘Basements in the City’ case is analogous; such that the boundaries correspond to the streetscape, existing basements of other buildings (and their connections A/A), subway tunnels and utility corridors, etc.
+Commence initial ‘Primitive Geometry Carve-out’[e][f] of prospective interior space as another set of convex hulls which effectively corresponds to a ‘feasibility region’ for where the architecture is ‘allowed’ to be generated. This primitive definition could also be kept for future interior spaces, culling spatial partitioning, etc. as to “not waste the info”. In any event: via this definition - more refined/detailed candidates can now be generated[g].
+Commence ‘Architectural Generation’ of interior space. This is the ‘Big Realization of [Shape] Grammars’ step; and encompasses using ‘architectural words, sentences, and songs’ in a Shape-Grammar method to install all the prefabs corresponding to all of the interior architecture[h]; e.g. walls, floors, ceilings, doors, stairwells, etc. Another prospectively novel idea is to incorporate damage modifications[i] into the language, as to support stuff like “produce a partially damaged colonnade” within the generator hierarchy.
+Commence Micro-Architecture Generation and Prop Placement. An extra step that I’m more convinced should be included in my method: either a different generator (or possibly the same hierarchy[j]) could then generate smaller scale architecture and props. The former would include loose wires, spiderwebs, pipes, static animated props (e.g. boilers, generators, gearworks, etc.), etc. The latter would include everything from trash bins and chairs to welkynd stones and food.
+[a]Also Includes other Computational Geometry topics with known methods
+
+[b]Basically - the ability to stretch/alter the prefab definition to fit into a defined space; e.g. how the wonka building generator paper supports dynamically modifying building widths and floor heights s.t. the prefabs follow along and fit/correspond therein
+
+[c]I like the word 'installing', as it nicely encompasses my idea of the primitive geometry of the 'build zone' as some hollywood studio kind of basic box-shaped warehouse from which to then assemble and install the various sets for a movie scene.
+
+[d]Basically: Express an entire dungeon as a 'sea of nodes' similar to how Wonka expresses a skyscraper.
+
+[e]This could be an application of what I saw in the 'Generative Building Architecture' Wonka-Paper in terms of representing the generated space in a model heirarchy as to support both LOD and more importantly - easier editing of the space WRT some 'level' thereof. For example: speaking for the room layout of a room before worrying about the installation of prefabs for the walls, floors, etc.
+
+[f]This was AKA creating 'build zones' but likely not the best descriptor
+
+[g]Another intermediate process that needs to be discussed is defining geometry for the connections to exterior areas and/or separate interior spaces (A/A to where connections exist and are defined, of course)
+
+[h]This was AKA 'swap[ping] the primitive geometric definitions with architectural prefabs', which is also analogous to the Wonka 'Generative Bldg Architecture' paper's high-level methods.
+
+[i]else some otherwise damage sim to the geometry, as would be necessary for an online, physics-oriented,  and persistent destructible geometry
+
+[j]Now THIS is an interesting idea, and even analogous to the 'Hypercontainer' concept?!?
+
+
+
