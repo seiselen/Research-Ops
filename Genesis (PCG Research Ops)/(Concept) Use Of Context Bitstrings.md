@@ -7,7 +7,7 @@ Alex Koltz recently *(i.e. Fall 2019 or Spring 2020 semester)* reminded me about
 
 The context by which he reintroduced the idea was to allow such interior spaces, once generated, to remain persistent thereafter; as I am also interested in means by which to both support contextual consistency and even enable collaborative discovery and 'as-explored' generation (which would correspondingly realize a world implicitly shared among single players of a particular virtual environment in addition to one explicitly shared as by a MORPG). An immediate extrapolation is to offer persistence such that the static geometry perists unchanged alongside a contextual definition for the interiors' props and NPCs which is subject to modification (e.g. swapping out NPCs and loot items over time as per E.S. Oblivion).
 
-As of 01/05/2020: The main if not only purpose of this would be to compress the 'contextual definition' of the generated content; both in terms of its static definition (i.e. “this is a grocery store”) and dynamic/unique definition (i.e. “it was looted”, “it was overrun with zombies at some point”).
+***01/05/2020 Update**: The main if not only purpose of this would be to compress the 'contextual definition' of the generated content; both in terms of its static definition (i.e. "this is a grocery store") and dynamic/unique definition (i.e. "it was looted", "it was overrun with zombies at some point").*
 
 ## Example Case
 
