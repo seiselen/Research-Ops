@@ -1,11 +1,7 @@
 ########################################################################
 TTD WRT Wrapping Up Refactors (i.e. stuff-not-done-yet-list):
 
-Has GH MD:
-  > Level Of Authoring
-
-Is Ext HTML
-  > Blackreach-Erebor (fully ext a/o 05/31/22)
-  > Naughtiest Problem and Trifold Principle (fully ext a/o 05/31/22)
+  > Blackreach-Erebor
+  > Naughtiest Problem and Trifold Principle
 
 ########################################################################
