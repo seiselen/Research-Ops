@@ -4,13 +4,11 @@
 
 **Blurb:** Papers, Articles, and Notes written/prepared by Steven Eiselen involving various research ops; including (i.e. mostly encompassing) Procedural Content Generation, Intelligent Agents, 3D Simulation Worlds, Game/Simulation Programming, Digital Physics (i.e. as analogous or equivalent to Simulation Hypothesis, Computational Univese theory, and Wolfram's Fundamental Theory of Physics), and misc. Computer Science / other projects as-applicable.
 
-**Progress Note:** I am currently (i.e. June 2022) cleaning up the various notes related to **Project - Genesis** for placement on here as GH MD files. This is the best format for my purposes, as I plan to revisit some of these notes via continuing with my R&D ops; ergo need a medium that's both easy to add/edit/remove content and archive/publish for others to view. You might see a bunch of .md files here - but they will eventually go into subdirectories WRT Genesis, Fëa, and misc/other topics.
-
 ## Specific Research Projects/Initiatives:
 
-+ **Project - Genesis:** Procedural Content Generation, encompassing both 'generator-end' techniques and 'user-end' workflows.
++ **Project - Genesis:** Procedural Content Generation, encompassing both 'generator-end' techniques and 'user-end' workflows. View the **Genesis (PCG Research Ops)** directory of this repo for published content thereto.
 
-+ **Project - Fëa:** Simulating (Implementing) Personality, Emotions, Social Relationships, and Physical/Mental needs for NPC agents.
++ **Project - Fëa:** Simulating (Implementing) Personality, Emotions, Social Relationships, and Physical/Mental needs for NPC agents. View the **Fea (Character AI Research Ops))** directory of this repo for published content thereto.
 
 + **Project - Glasshouse:** Utilization of 'Smart City' technologies for artificial biomes, specifically WRT offworld outposts/colonies.
 
