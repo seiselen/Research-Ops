@@ -1,4 +1,4 @@
-# Concept: LOA (Level Of Authoring)
+# LOA (Level Of Authoring)
 
 ## Overview: 
 
