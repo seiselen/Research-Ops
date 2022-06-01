@@ -24,6 +24,21 @@ Steven Eiselen | Version 05/29/22
 
 **'Blackreach'** is a Dwemer (Dwarven) City located beneath the Province of Skyrim within the 'Elder Scrolls' universe. **'Erebor'** is a Dwarven City located beneath the Lonely Mountain from the 'Lord of The Rings' universe. Each had its builders and original inhabitants displaced such that they were both effectively ruins. Their size, scale, and similar outcomes compose perhaps the greatest depictions of the classic 'dungeon' environment known well to any video game and fantasy fiction fan, and this quality is why each compose the names of this project.
 
+## (11/25/19) Notes On Prospective Novelty Of BE
+
+**The prospective novelty of my emergent approach/methods involves the expansion and composition of known PCG methods** *(naturally, as isn't this much of the frontier of research in Computer Science?)* I would be adapting existing methods 'outwards'; for example: using Wonka's shape grammar/tree methods for generating the exteriors of buildings *(i.e. 'Interactive Visual Editing of Grammars for Procedural Architecture')* towards generating the interiors thereof. I would be adapting existing methods 'inwards' via continuing the 'generative tree' definition towards deeper leaves/layers ergo 'continuing the expressveness of the language'. These improvements would encompass things ranging from procedural damage modifiers (as perhaps deformation maps); to 'micro-element props' such as static lighting fixtures against a wall (and code supporting the light); and/or dynamic props such placing fire hydrants in their geometry-defined boxes within a wall, and/or loose, destructible pipe and wire models connecting geometry-defined I/O wall prefabs *(think DooM 3 labs and/or Skyrim's Dwemer ruins)*.
+
+## Common Methods Identified Via Precedent Research
+
+**Include:**
+* **Convex Hull Generation** and other Computational Geometry methods for identifying the 'build zones', collision areas, etc.
+* **Spatial Partitioning** for defining rooms within the 'build zones'
+
+* ***Shape* Grammars** for defining the multi-layer prefabs, as to support variability. That is: the ability to stretch/alter the prefab definition to fit into a defined space; e.g. how the wonka building generator paper supports dynamically modifying building widths and floor heights s.t. the prefabs follow along and fit/correspond therein.
+
+* ***Prefab* Grammars** for *installing* multi-layer prefabs upon the 'build zones'. The word **installing** is very fitting here: as it nicely encompasses my idea of the primitive geometry of the 'build zone' as some hollywood studio kind of basic box-shaped warehouse from which to then assemble and install the various sets for a movie scene.
+
+* **Circle Filling** (e.g. Poisson Disk) and **Square Filling** (e.g. [Blue] Noise) Algorithms (as well as aforementioned methods) to place static and dynamic props.
 
 
 
