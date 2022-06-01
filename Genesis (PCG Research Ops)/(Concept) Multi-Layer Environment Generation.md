@@ -1,4 +1,4 @@
-# Concept: MLEG (Multi-Layer Environment Generation)
+# MLEG (Multi-Layer Environment Generation)
 
 ## Blurb/Overview
 
