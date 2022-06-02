@@ -1,4 +1,5 @@
 <p align="center"><img src="https://github.com/seiselen/Research-Ops/blob/main/eisResInitBG.png" width="800px" height="200px" /></p>
+<p align="center"><img src="https://github.com/seiselen/Research-Ops/blob/main/GenesisFeaLogos_SideBySide.png" width="600px" height="300px" /></p>
 
 # Research Operations
 
