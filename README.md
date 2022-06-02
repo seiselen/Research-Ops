@@ -8,9 +8,9 @@
 
 <p align="center"><img src="https://github.com/seiselen/Research-Ops/blob/main/GenesisFeaLogos_SideBySide.png" width="600px" height="300px" /></p>
 
-+ **Project - Genesis:** Procedural Content Generation, encompassing both 'generator-end' techniques and 'user-end' workflows. View the **Genesis (PCG Research Ops)** directory of this repo for published content thereto.
++ **Project - Genesis:** Procedural Content Generation, encompassing both 'generator-end' techniques and 'user-end' workflows. View the **Genesis (PCG Research Ops)** directory of this repo [[linked here]](https://github.com/seiselen/Research-Ops/tree/main/Genesis%20(PCG%20Research%20Ops)) for published content thereto.
 
-+ **Project - Fëa:** Simulating (Implementing) Personality, Emotions, Social Relationships, and Physical/Mental needs for NPC agents. View the **Fea (Character AI Research Ops))** directory of this repo for published content thereto.
++ **Project - Fëa:** Simulating (Implementing) Personality, Emotions, Social Relationships, and Physical/Mental needs for NPC agents. View the **Fea (Character AI Research Ops))** directory of this repo [[linked here]](https://github.com/seiselen/Research-Ops/tree/main/Fea%20(Character%20AI%20Research%20Ops)) for published content thereto.
 
 + **Project - Glasshouse:** Utilization of 'Smart City' technologies for artificial biomes, specifically WRT offworld outposts/colonies.
 
