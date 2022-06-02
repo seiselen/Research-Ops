@@ -1,5 +1,6 @@
 # The Naughtiest Problem and Trifold Principle of PCG
 
+---
 ## The Naughtiest Problem
 
 ### Introduction and History
@@ -27,7 +28,7 @@ In 2019 during preliminary research for a since suspended CS Master's Thesis pro
 
 > *"Multi-level, multi-content PCG refers to a content generator that, for a given game engine and set of game rules, would be able to generate all of the content for the game such that the content is of high quality and fits together perfectly. For example, given the engine and ruleset for the popular computer role-playing game (Elder Scrolls V) Skyrim, this imaginary software would generate backstory, quests, characters, items, weapons, vegetation, terrain, graphics, etc. in such a fashion that it all becomes a coherent, believable new world and an enjoyable game to play." **(PCGIG, pp. 5-6)***
 
-
+---
 ## Trifold Principle Of Advanced PCG Worlds
 
 ### Introduction
@@ -36,7 +37,7 @@ In addition to the **'Content Input Database'** of **'The Naughtiest Problem'** 
 
 ### The Trifold Principle (Of PCG)
 
-The Principle itself is, as implied by its name, is composed of three elements as sub-principles:
+The Principle itself is, as implied by its name, composed of three elements as cohesive yet disjoint *sub-principles*:
 * **(1)** Principle of **Physical Stability**, which generally encompasses the ***(game) engine*** of the simulation world
 * **(2)** Principle of **Contextual Consistency**, which generally encompasses the ***design*** of the simulation world
 * **(3)** Principle of **Spatiotemporal Synchronicity**, which generally encompasses the ***initialization / progression*** of the simulation world
