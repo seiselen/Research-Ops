@@ -28,3 +28,59 @@ In 2019 during preliminary research for a since suspended CS Master's Thesis pro
 > *"Multi-level, multi-content PCG refers to a content generator that, for a given game engine and set of game rules, would be able to generate all of the content for the game such that the content is of high quality and fits together perfectly. For example, given the engine and ruleset for the popular computer role-playing game (Elder Scrolls V) Skyrim, this imaginary software would generate backstory, quests, characters, items, weapons, vegetation, terrain, graphics, etc. in such a fashion that it all becomes a coherent, believable new world and an enjoyable game to play." **(PCGIG, pp. 5-6)***
 
 
+## Trifold Principle Of Advanced PCG Worlds
+
+### Introduction
+
+In addition to the **'Content Input Database'** of **'The Naughtiest Problem'** and as expansion of the other key ideas introduced within the original 'base' definition thereof: latter additions speak further about the aforementioned 'features, requirements, and constraints' encompassing the initialization and progression of such worlds. Likewise, I believe that a key definition/qualification regarding such worlds might not be unprecedented, but appears non-existent (at the time of writing). Ergo, I have defined a **'Trifold Principle'** of PCG to encompasses the sum of the aforementioned requirements and constraints towards a (fully) PCG realization of an advanced simulation of some world; from the example of the Naughtiest Provlem and all analogs thereof WLOG. Basically, this principle asserts that optimal procedurally generated environments must keep and enforce the 'illusion of reality' within virtual reality environments as much as possible.
+
+### The Trifold Principle (Of PCG)
+
+The Principle itself is, as implied by its name, is composed of three elements as sub-principles:
+* **(1)** Principle of **Physical Stability**, which generally encompasses the ***(game) engine*** of the simulation world
+* **(2)** Principle of **Contextual Consistency**, which generally encompasses the ***design*** of the simulation world
+* **(3)** Principle of **Spatiotemporal Synchronicity**, which generally encompasses the ***initialization / progression*** of the simulation world
+
+### The 'New Principle' and Cohesion Among The Three
+
+The third principle, 'Spatiotemporal Synchronicity', is new in 2022. In fact, the original name of this entire idea was 'Principle of Physical Stability and Contextual Consistency', with the then missing 3rd element embedded within the prior two; however I decided to partition it out therefrom as its scope warrants a disjoint element. However, there nonetheless remains an intended sense of cohesion between all three elements, as the complement of each encompasses the means towards effecting convergence towards optimally realistic procedurally generated simulation environments WRT both human explorers and most importantly: the native inhabitants therein. 
+
+### Principle Of Physical Stability
+
+**Physical Stability** demands that the generated world is stable with respect to the physical laws which govern it; similar to how the laws of gravity, thermodynamics, etc. must always hold in order for our universe to be stable to exist within. 
+
+**WRT General Examples - This means things like:**
+* No sudden major gaps of defined world space or missing pieces to the world (e.g. forest turns into giant flat patch of land, there is a voidous space where a town or lake {or ANYTHING for that matter} should be)
+* No degenerate geometry whereby characters or otherwise rigidbody items can fall through floors or buildings and/or float in the air *unintentionally* (e.g. pedestrians slipping through a sidewalk or otherwise solid ground)
+* Gravity and physical surfaces, fields, and other effects are consistent throughout the world unless intentionally divergent (e.g. gravity is too large, small, none, and/or negative areas where it is not supposed to be)
+
+**WRT Technical Examples - This means things like:**
+* Mesh colliders correct with geometry and collision mechanics behave correctly
+* No holes exist for terrain meshes nor holes and/or z-fighting for any surface
+* No static objects (i.e. trees) are 'floating in the air' nor ever become dynamic
+* No physically dynamic objects 'freeze in place' as static objects
+* NPCs able to navigate throughout world with no unrealistic pathing effects
+* NPCs travel correctly and seamlessly between sub-scenes/environments.
+
+### Principle Of Contextual Consistency
+
+**Contextual Consistency** demands that all *content* in all spaces within the generated world is consistent with all aspects of their respective *context*. For example: an accurate simulation of Paris, France in the 1960's should not have NYPD police cars from the 2010's patrolling the streets, nor a simulation of Middle Earth in Lord Of The Rings have Boeing 747 Jumbo Jets flying over the skies of Gondor. 
+
+**WRT General Examples - This means things like:**
+* No police cars, cell phones, modern clothing, nor 757 jets flying over what should be the classic fantasy setting
+* Terrain, props, architecture, buildings, NPCs consistent with surrounding area.
+* No patch of snow covered tundra in a tropical forest or vice versa.
+* No Borg in a DooM simulation, nor Cyberdemons in a Star Trek simulation
+
+### Principle of Spatiotemporal Synchronicity
+
+**Spatiotemporal Synchronicity** requires that on initializing the world at a specified date/time within its official lore timeline: everything and everyone within is physically stable and contextually consistent accordingly; and will furthermore progress forward in time in a manner expected to minimally diverge from the official timeline, and even then over a reasonably long period. 
+
+Another way I worded this is that the simulation will be 'temporally consistent' if given a specified inception time: such that as time progresses, the evolution of the world will 'reasonably' converge upon the lore timeline for the remaining span of context clues given, then likewise diverge thereafter. Again, the special cohesion between this 'new' principle and the two others is intented and self-evident; e.g./i.e. that the knowledge, memories and personalities of any character, and the otherwise state of any entity defined by the input are 'Physically Stable' and 'Contextually Consistent' thereto.
+
+**Example WRT the Lord Of The Rings simulation via The Naughtiest Problem:** Assume the current timeframe is before Gandalf discovers that his fellow wizard Saruman has secretly turned against the fellowship and has aligned with the dark lord Sauron. One should be able to walk up to Gandalf's character, tell him that they think Saruman has become evil, and be told by Gandalf that while Saruman has been quiet-of-late, there's no evidence to prove this claim.
+
+
+
+
+
