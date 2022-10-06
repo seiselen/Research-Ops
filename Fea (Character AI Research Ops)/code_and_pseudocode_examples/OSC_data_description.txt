@@ -1,0 +1,83 @@
+ROUGH SKETCH OF OSC-ORIENTED DATA STRUCTURES (1/1/21)
+
+------------------------------------------------------------------------
+Super-Succinct Big-Picture Of OSC-Oriented Data Structures >>>
+
+  o byte[3]   Personality_Vector
+  o float[10] Event_Emotional_Reaction (as some number of instances per-frame)
+  o float[10] Internal_Emotional_State (as singleton)
+  o float[10] External_Emotional_State (as singleton)
+  o SocRel[q] Social_Relationship_List (as HashMap of SocRel objs keyed on [N]PC ID)
+  o Event[?]  Event_List               (as ordered List xor HashMap of Event objs)
+
+
+------------------------------------------------------------------------
+Personality >>> (3-Tuple) [e,n,a] where:
+
+  o Values are integers in domain {-1,0,1} (i.e. {negative,neutral,positive})
+
+  o e -> "Extroversion"  -> {introvert/neutral/extrovert}
+  o n -> "Neuroticism"   -> {stable/neutral/neurotic}
+  o a -> "Agreeableness" -> {disagreeable/neutral/agreeable}
+
+------------------------------------------------------------------------
+Event >>> (4-Tuple) [eff, act, aff, t, dc] where:
+
+  o eff -> 'effector' -> thing doing the action, as int ID
+  o act -> 'action'   -> predefined action encompassing event; as int ID xor enum
+  o aff -> 'affected' -> thing affected by the action, as int ID
+  o t   -> 'timestamp' -> could be when event occured and/or when agent heard/saw it 
+  o dc  -> 'degree of certainty' -> % confidence that event occured; as [0,1] where:
+    > [1]   = NPC completely believes that the event occurred as reported to it
+    > [0]   = NPC once thought event was possible, now knows it did NOT happen
+    > (0,1) = Somewhere between the aforementioned extrema
+
+  o Add'l Notes:
+    > eff/aff are ints assigned at-runtime ergo can't be enums
+    > act can be an enum, as I should keep domain of actions pre-baked,
+      especially as OSC assumes the same via defining action-effects.
+    > timestamp should actually be 2 values whose variables correspond to
+      both when the event was learned/observed, and when the event occured
+
+    > For the above 'Super-Succinct Big-Picture': this would, of course,
+      compose only a very simplified "blurb/surface-level" KB, as much
+      info on possibly needed aspects of an event are reduced i.e. lost.
+
+------------------------------------------------------------------------
+Emotion >>> (10-Tuple) [jo, an, re, dt, ho, fe, ad, dp, pr, sh] where:
+
+  o 10 types, each in range [0,1], shown below in pairs of opposites:
+      (Joy, Anger),
+      (Relief,Distress),
+      (Hope, Fear),
+      (Admiration, Disappointment),
+      (Pride, Shame)
+
+  o Note: OSC composes their values into a single Vector-10 because...
+
+  o 3 Emotion Vectors described (as according to their different use):
+      - Event Reaction: Defines overall emotion[s] 'felt' by a particular event
+      - Internal State: Defines NPC's overall emotional state at a given time
+      - External State: Defines NPC's emotional expression at a certain time
+
+  o Note: Internal State <=/=> External State! (i.e. not necessarily equivalent)
+
+------------------------------------------------------------------------
+Social Relationships >>> (6-Tuple) [q, r, l, d, f, s] where:
+
+  o q -> ID of NPC/PC that THIS NPC has a relationship with,
+  o r -> ENUM ID of the role THIS NPC has with q (i.e. STUDENT-2-TEACHER, etc.)
+
+  o {l, d, f, s} -> values each in range [-1,1] where:
+      * l -> 'liking'
+      * d -> 'dominance'
+      * f -> 'familiarity'
+      * s -> 'solidarity'
+
+  o OSC paper discusses a mechanism to map [r]->[l,d,f,s] for an NPC on creating
+    a new social relationship. QAD: it uses a pre-baked table with a function on
+    [r] to create initial [l,d,f,s] values for the NPC
+
+  o Also - we'll wrap the 6-Tuple into a data struct 'SocRel(q)' to represent the 
+    social relationship of THIS NPC to some other [N]PC 'q'; as such will likely
+    be implemented with a HashMap wherein { q : SocRel(q) }

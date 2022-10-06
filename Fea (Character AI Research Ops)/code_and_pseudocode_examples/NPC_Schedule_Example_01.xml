@@ -1,0 +1,63 @@
+<!-- Scheduler Activity Sample Struct:     
+     
+     Notes:
+      - This acts as both a 'script' and identifies stuff involved with each task
+      - Assumes that failure to do a task (i.e. no closest food) simply skips over the task/event
+      - Assumes that no activity (i.e. idle) results in NPC doing some idle behavior a-la Oblivion
+      - Assumes given timeframes 'work', else we need some 'in-case-character-late' handling?
+-->
+
+<npc name = "Eyja" ID = "631">
+  <schedule name = "Weekday">
+
+    <!-- [Eyja sleeps in her bed] -->
+    <activity tag = "sleep" start = "00:00" end = "07:00">
+      <walk destination = "ownedBed" backup = "anyUnownedSleepSurface"/>
+      <sleep at = "ownedBed" backup = "anyUnownedSleepSurface"/>
+      <!-- She should own a bed, but if somehow not - she'll just idle -->
+    </activity>
+
+    <!-- [Eyja eats breakfast in her home] -->
+    <activity tag = "eat_breakfast" start = "07:00" end = "08:00">
+      <walk destination = "closestFood"/>
+      <grab item = "closestFood"/>
+      <eat foodItem = "anyInventoryFood"/>
+    </activity>
+
+    <!-- [Eyja goes to her job at Colovian Traders] -->
+    <activity tag = "goto_work" start = "08:00" end = "08:30">
+      <walk destination = "ColovianTraders"/>
+    </activity>
+
+    <!-- [Eyja does work-day behavior i.e. helps run the shop] -->
+    <activity tag = "workday" start = "08:30" end = "17:30">
+      <workday at = "ColovianTraders"/>
+    </activity>
+
+    <!-- [Eyja goes to the Two Sisters Lodge to eat dinner] -->
+    <activity tag = "goto_dinner" start = "17:30" end = "18:00">
+      <walk destination = "TwoSistersLodge"/>   
+    </activity>
+
+    <!-- [Eyja eats dinner at the Two Sisters Lodge] -->
+    <activity tag = "eat_dinner" start = "18:00" end = "19:00">
+      <grab item = "closestFood"/>
+      <walk destination = "closestOpenSeatAtTable" backup = "closestOpenSeat"/>
+      <!-- If neither destination legal, NPC will eat where they're standing -->
+      <eat foodItem = "anyInventoryFood"/>      
+    </activity>
+
+    <!-- [Eyja enters general idle period at the lodge i.e. 'hangs out there'] -->
+
+    <!-- [Eyja returns to her home i.e. to sleep] -->
+    <activity tag = "goto_home" start = "21:30" end = "22:00">
+      <walk destination = "ownedHome"/>      
+    </activity> 
+
+    <!-- [Eyja enters general idle period at her home i.e. 'gets ready for bed'] -->
+
+  </schedule>
+  <schedule name = "Weekend">
+    <!-- Activities of alternate weekend schedule for Eyja goes here -->
+  </schedule>
+</npc>
